@@ -21,7 +21,7 @@
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="product">Home</a></li>
                                         <li class="breadcrumb-item"><a href="product">Category</a></li>
-                                        <li class="breadcrumb-item active" aria-current="#">Sub-category</li>
+                                        <li class="breadcrumb-item active" aria-current="page">Sub-category</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -32,10 +32,10 @@
                         <div class="container">
                             <div class="card">
                                 <div class="row">
-                                    <aside class="col-sm-5 border-right">
+                                    <aside class="col-sm-5 border-right" aria-label="Product Image Gallery">
                                         <article class="gallery-wrap"> 
                                             <div class="img-big-wrap">
-                                                <div> <a href="#"><img src="${detail.image}"></a></div>
+                                                <div> <a href="#"><img src="${detail.image}" alt="Product Image"></a></div>
                                         </div> 
                                     </article> 
                                 </aside>

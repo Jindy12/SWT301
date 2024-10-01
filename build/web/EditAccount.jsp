@@ -39,11 +39,11 @@
                             <div class="modal-header">						
                                 <h3 class="modal-title">Edit Account</h3>
                                 <h4 class="modal-title">Can edit only Is Shop!</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="window.location.href='manageraccount'">X</button>
+                                <button type="button" class="close" data-dismiss="modal" onclick="window.location.href='manageraccount'">X</button>
                             </div>
                             <div class="modal-body">					
                                 <div class="form-group">
-                                    <label>ID</label>
+                                    <label for="accountid">ID</label>
                                     <input value="${acc.accountid}" name="accountid" type="text" class="form-control" readonly readonly>
                                 </div>
                                 <div class="form-group">
