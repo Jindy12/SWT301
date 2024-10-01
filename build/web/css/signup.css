@@ -1,0 +1,47 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Feb 28, 2024, 3:00:34 AM
+    Author     : phamd
+*/
+/* signup.css */
+
+/* signup.css */
+
+/* Style cho form đăng ký */
+.container {
+    width: 100%;
+/*    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid #ccc;  Border style */
+    padding: 20px;
+    border-radius: 5px; /* Rounded corners */
+}
+
+.form-signup input {
+    margin-bottom: 10px;
+}
+
+.form-signup button {
+    margin-top: 10px;
+}
+
+.form-signup a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.container {
+    margin-top: 15%;
+}
+
+body{
+    background-image: url("https://wallpaperset.com/w/full/4/9/c/186657.jpg")
+}
+.font-weight-normal {
+    color: white;
+    text-align: center;
+}

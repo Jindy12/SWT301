@@ -1,0 +1,74 @@
+/* CSS cho form đăng nhập */
+.form-signin {
+    width: 100%;
+    max-width: 400px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.form-signin input[type="text"],
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+}
+
+.form-signin button[type="submit"] {
+    margin-top: 10px;
+}
+
+.form-signin .form-check-input {
+    margin-top: 10px;
+}
+
+/* CSS cho liên kết quên mật khẩu */
+.form-signin a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* CSS cho nút đăng ký */
+.btn-signup {
+    margin-top: 10px;
+}
+
+/* CSS cho phần chứa biểu mẫu đăng nhập */
+#logreg-forms {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+body{
+    background-image: url("https://wallpaperset.com/w/full/4/9/c/186657.jpg")
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Đảm bảo form nằm giữa trên cùng của màn hình */
+}
+
+#logreg-forms {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 5px; /* Rounded corners */
+}
+.container {
+    width: 100%;
+/*    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid #ccc;  Border style */
+    padding: 20px;
+    border-radius: 5px; /* Rounded corners */
+}
+.form-signin h1{
+    text-align: center;  
+}
+.font-weight-normal{
+    color: white;
+}
+.form-check-label{
+    color: white;
+}
