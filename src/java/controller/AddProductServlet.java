@@ -56,53 +56,49 @@ public class AddProductServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        // Lấy thông tin sản phẩm từ request parameters
-        String pname = request.getParameter("name").trim();
-        String pimage = request.getParameter("image").trim();
-        String ptitle = request.getParameter("title").trim();
-        String pdescription = request.getParameter("description").trim();
-        String pquanlityStr = request.getParameter("quanlity").trim();
-        String pcategoryStr = request.getParameter("categoryid").trim();
-        String ppriceStr = request.getParameter("price").trim();
+protected void doGet(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+    // Define a local variable for the "manager" page
+    String managerPage = "manager";
 
-        // Kiểm tra các trường thông tin có chứa khoảng trắng không
-        if (pname.isEmpty() || pimage.isEmpty() || ptitle.isEmpty() || pdescription.isEmpty() || pquanlityStr.isEmpty() || pcategoryStr.isEmpty() || ppriceStr.isEmpty()) {
-            // Nếu có, hiển thị thông báo lỗi
-            String errorMessage = "Text is have White Space , input again!";
-            request.setAttribute("error", errorMessage);
-            request.getRequestDispatcher("manager").forward(request, response);
-            return;
-        }
+    String pname = request.getParameter("name").trim();
+    String pimage = request.getParameter("image").trim();
+    String ptitle = request.getParameter("title").trim();
+    String pdescription = request.getParameter("description").trim();
+    String pquanlityStr = request.getParameter("quanlity").trim();
+    String pcategoryStr = request.getParameter("categoryid").trim();
+    String ppriceStr = request.getParameter("price").trim();
 
-        // Kiểm tra nếu giá và số lượng không phải là số
-        double pprice;
-        int pquanlity;
-        try {
-            pprice = Double.parseDouble(ppriceStr);
-            pquanlity = Integer.parseInt(pquanlityStr);
-        } catch (NumberFormatException e) {
-            // Nếu không phải số, hiển thị thông báo lỗi
-            String errorMessage = "Price and Quantity must be numbers!";
-            request.setAttribute("error", errorMessage);
-            request.getRequestDispatcher("manager").forward(request, response);
-            return;
-        }
-
-        // Chuyển đổi các trường số thành kiểu dữ liệu số
-        int pcategory = Integer.parseInt(pcategoryStr);
-
-        // Thực hiện thêm sản phẩm vào cơ sở dữ liệu
-        HttpSession session = request.getSession();
-        Account a = (Account) session.getAttribute("account");
-        int accountid = a.getAccountid();
-        ProductDAO productData = new ProductDAO();
-        productData.AddProduct(pname, pimage, pprice, ptitle, pdescription, pquanlity, pcategory, accountid);
-
-        // Chuyển hướng đến trang quản lý sản phẩm sau khi thêm thành công
-        response.sendRedirect("manager");
+    if (pname.isEmpty() || pimage.isEmpty() || ptitle.isEmpty() || pdescription.isEmpty() || pquanlityStr.isEmpty() || pcategoryStr.isEmpty() || ppriceStr.isEmpty()) {
+        String errorMessage = "Text contains white spaces, input again!";
+        request.setAttribute("error", errorMessage);
+        request.getRequestDispatcher(managerPage).forward(request, response);
+        return;
     }
+
+    double pprice;
+    int pquanlity;
+    try {
+        pprice = Double.parseDouble(ppriceStr);
+        pquanlity = Integer.parseInt(pquanlityStr);
+    } catch (NumberFormatException e) {
+        String errorMessage = "Price and Quantity must be numbers!";
+        request.setAttribute("error", errorMessage);
+        request.getRequestDispatcher(managerPage).forward(request, response);
+        return;
+    }
+
+    int pcategory = Integer.parseInt(pcategoryStr);
+
+    HttpSession session = request.getSession();
+    Account a = (Account) session.getAttribute("account");
+    int accountid = a.getAccountid();
+    ProductDAO productData = new ProductDAO();
+    productData.AddProduct(pname, pimage, pprice, ptitle, pdescription, pquanlity, pcategory, accountid);
+
+    response.sendRedirect(managerPage);
+}
+
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -115,6 +111,7 @@ public class AddProductServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+            // This method is intentionally left empty as only GET requests are supported for adding products.
 
     }
 
